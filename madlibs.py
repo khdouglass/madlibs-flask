@@ -1,6 +1,6 @@
 """A madlib game that compliments its users."""
 
-from random import choice
+from random import choice, sample
 
 from flask import Flask, render_template, request
 
@@ -34,9 +34,13 @@ def greet_person():
     """Greet user with compliment."""
 
     player = request.args.get("person")
+    wantcompliment = request.args.get("wantcompliment")
 
-    compliment = choice(AWESOMENESS)
-
+    if wantcompliment:
+        compliment = sample(AWESOMENESS, 3)
+    else:
+        compliment = []
+    
     return render_template("compliment.html",
                            person=player,
                            compliment=compliment)
@@ -61,13 +65,21 @@ def show_madlib():
     noun = request.args.get("noun")
     adjective = ", ".join(request.args.getlist("adjective"))
     verb = request.args.get("verb")
+    noun2 = request.args.getlist("noun2")
+    lengthofnoun2 = len(noun2)
+
+    madlib = choice(["madlib.html", "madlib2.html", "madlib3.html"])
     
-    return render_template("madlib.html", 
+    print madlib
+
+    return render_template(madlib, 
                             person=person,
                             color=color,
                             noun=noun,
                             adjective=adjective,
-                            verb=verb)
+                            verb=verb,
+                            noun2=noun2,
+                            length=lengthofnoun2)
 
 if __name__ == '__main__':
     # Setting debug=True gives us error messages in the browser and also

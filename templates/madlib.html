@@ -1,18 +1,25 @@
-<!doctype html>
-<html>
-<head>
-  <title>Madlib</title>
-    <link type="text/css" rel="stylesheet" href="/static/madlibs.css">
+{% extends 'base.html' %}
+{% block title %}Madlib{% endblock %}
+{% block content %}
+    <p> There once was a {{ color }} {{ noun }} sitting in the Hackbright Lab. When {{ person }} went to pick it up, it burst into flames in a totally {{ adjective }} way. Then the {{ noun }} did a {{ verb }}. They were sad so they bought a 
+    {% if noun2 %}
+        {% for noun in noun2 %}
+            {% if length >= 3 %}
+              {% if noun == noun2[-1] %}
+                and {{ noun }}.
+              {% else %}
+                 {{ noun }},
+              {% endif %}
+            {% elif length == 2 %}
+               {% if noun == noun2[-1] %}
+                {{ noun }}.
+               {% else %}
+                {{ noun }} and
+               {% endif %} 
+            {% else %}
+                {{ noun }}. 
+            {% endif %} 
+        {% endfor %}
+    {% endif %}</p>
+{% endblock %}
 
-</head>
-<body>
-
-<h1>Here's your Madlib</h1>
-
-<img src="https://media.giphy.com/media/l0MYuh22FqUabQnZe/giphy.gif">
-
-<p> There once was a {{ color }} {{ noun }} sitting in the Hackbright Lab. When {{ person }} went to pick it up, it burst into flames in a totally {{ adjective }} way. Then the {{ noun }} did a {{ verb }}.</p>
-
-
-</body>
-</html>

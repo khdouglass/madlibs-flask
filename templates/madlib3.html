@@ -1,20 +1,26 @@
-<!doctype html>
-<html>
-<head>
-  <title>Madlib</title>
-    <link type="text/css" rel="stylesheet" href="/static/madlibs.css">
-
-</head>
-<body>
-
-<h1>Here's your Madlib</h1>
-
-<img src="https://media.giphy.com/media/l0MYuh22FqUabQnZe/giphy.gif">
-
-<p>Pizza was invented by a {{ adjective }} chef named {{ person }}. To make
-pizza, you need to take a lump of {{ noun }} and {{ verb }} it. After you 
-bake it, it turns {{ color }}.</p>
-
-
-</body>
-</html>
+{% extends 'base.html' %}
+{% block title %}Madlib{% endblock %}
+{% block content %}
+    <p>Pizza was invented by a {{ adjective }} chef named {{ person }}. To make
+    pizza, you need to take a lump of {{ noun }} and {{ verb }} it. After you 
+    bake it, it turns {{ color }}. Then top it with a 
+    {% if noun2 %}
+        {% for noun in noun2 %}
+            {% if length >= 3 %}
+              {% if noun == noun2[-1] %}
+                and {{ noun }}.
+              {% else %}
+                 {{ noun }},
+              {% endif %}
+            {% elif length == 2 %}
+               {% if noun == noun2[-1] %}
+                {{ noun }}.
+               {% else %}
+                {{ noun }} and
+               {% endif %} 
+            {% else %}
+                {{ noun }}. 
+            {% endif %} 
+        {% endfor %}
+    {% endif %}Et voila!</p>
+{% endblock %}

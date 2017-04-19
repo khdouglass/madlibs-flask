@@ -11,7 +11,18 @@
   </style>
 </head>
 <body>
-    <h1>Hi {{ person }}! </h1><br>
+    <h1>Hi {{ person }}! 
+      {% if compliment %}
+      You are so
+        {% for comp in compliment %}
+          {% if comp == compliment[2] %}
+            and {{ comp }}.
+          {% else %}
+             {{ comp }},
+          {% endif %}
+        {% endfor %}
+      {% endif %}
+    </h1><br>
     <img src="https://i.ytimg.com/vi/wYCFIMDYfDI/maxresdefault.jpg">
     <br>
     <br>
