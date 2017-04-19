@@ -1,0 +1,35 @@
+h1{
+    color: #003366;
+    font-family: "Arial";
+}
+
+p {
+    font-family: "Arial";
+    font-size: 24px;
+}
+div{
+    margin: auto;
+    display: inline-block;
+}
+
+img {
+    margin: auto;
+}
+
+body{
+    background-color: #ffccdd
+}
+
+input[type=submit]{
+    width: 150px;  
+    height: 50px;
+    font-size: 30px
+}
+
+form{
+    font-family: "Comic Sans MS", cursive, sans-serif; 
+}
+
+#sumbitmadlib{
+    width: 500px;
+}

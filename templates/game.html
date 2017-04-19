@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+<head>
+  <title>Madlibs!</title>
+  <link type="text/css" rel="stylesheet" href="/static/madlibs.css">
+</head>
+<body>
+<h1>Please enter your selections:</h1>
+<form action="/madlib">
+    <b>Person: <input type="text" name="person">
+    <br><br>
+    Color:
+    <select name="color">
+        <option value="" disabled selected>Choose One</option>
+        <option value="purple">purple</option>
+        <option value="periwinkle">periwinkle</option>
+        <option value="yellow">yellow</option>
+        <option value="teal">teal</option>
+        <option value="seafoam green">seafoam green</option>
+    </select>
+    <br><br>
+    Noun: <input type="text" name="noun" required>
+    <br><br>
+    Adjective:</b>    
+        <input type="checkbox" name="adjective" value="portly">portly
+        <input type="checkbox" name="adjective" value="sassy">sassy
+        <input type="checkbox" name="adjective" value="creepy">creepy
+        <input type="checkbox" name="adjective" value="amazeballs">amazeballs
+        <input type="checkbox" name="adjective" value="grool">grool
+    <br><br>
+    <b>Verb:</b>
+        <input type="radio" name="verb" value="jump">jump
+        <input type="radio" name="verb" value="high-five">high-five
+        <input type="radio" name="verb" value="crawl">crawl
+        <input type="radio" name="verb" value="squat">squat
+        <input type="radio" name="verb" value="point">point
+    <br><br>
+    <input type="submit" id="sumbitmadlib" value="WHAT WILL HAPPEN??">
+
+</body>
+</html>

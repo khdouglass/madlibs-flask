@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+<head>
+  <title>A Compliment</title>
+  <link type="text/css" rel="stylesheet" href="/static/madlibs.css">
+  <style>
+    img{
+        width: 500px;
+        height: 300px;
+        }
+  </style>
+</head>
+<body>
+    <h1>Hi {{ person }}! </h1><br>
+    <img src="https://i.ytimg.com/vi/wYCFIMDYfDI/maxresdefault.jpg">
+    <br>
+    <br>
+    <form action="/game">
+        <input type="radio" name="gameplay" value="yes">Yes
+        <input type="radio" name="gameplay" value="no">No
+        <input type="submit" value="Enter">
+</body>
+</html>
